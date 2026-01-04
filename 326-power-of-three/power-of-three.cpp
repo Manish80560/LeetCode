@@ -4,6 +4,8 @@ public:
         if(n <= 0){
           return false;
         }
+
+        int mul = 1;
          while (n % 3 == 0) {
             n /= 3;
         }
