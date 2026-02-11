@@ -1,0 +1,28 @@
+import java.util.concurrent.Semaphore;
+
+class Foo {
+
+    private Semaphore secondSemaphore;
+    private Semaphore thirdSemaphore;
+
+    public Foo() {
+        secondSemaphore = new Semaphore(0);
+        thirdSemaphore = new Semaphore(0);
+    }
+
+    public void first(Runnable printFirst) throws InterruptedException {
+        printFirst.run();
+        secondSemaphore.release();  // Allow second() to run
+    }
+
+    public void second(Runnable printSecond) throws InterruptedException {
+        secondSemaphore.acquire();  // Wait for first()
+        printSecond.run();
+        thirdSemaphore.release();   // Allow third() to run
+    }
+
+    public void third(Runnable printThird) throws InterruptedException {
+        thirdSemaphore.acquire();   // Wait for second()
+        printThird.run();
+    }
+}
