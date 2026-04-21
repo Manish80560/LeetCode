@@ -1,12 +1,16 @@
 class Solution {
 public:
     int maxDistance(vector<int>& A) {
-        int j = A.size();
 
-        for (int i = 0; i < j; i++)
-            if ((A[i] ^ A.back()) | (A[j - 1 - i] ^ A[0]))
-                return j - 1 - i;
+        int n = A.size();
+        int maxDistance = 0;
 
-        return 0;
+        for(int i = 0 ; i < n ; i++){
+            for(int j = i + 1 ; j < n ; j++){
+                if(A[i] != A[j])
+                 maxDistance = max(maxDistance , j - i);
+            }
+        }
+        return maxDistance;
     }
 };
