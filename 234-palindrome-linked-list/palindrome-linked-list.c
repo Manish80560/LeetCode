@@ -44,6 +44,5 @@ bool isPalindrome(struct ListNode* head) {
         i++;
         j--;
     }
-
     return true;
 }
