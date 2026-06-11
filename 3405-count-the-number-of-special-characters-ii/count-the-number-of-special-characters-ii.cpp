@@ -1,7 +1,7 @@
 class Solution {
 public:
     int numberOfSpecialChars(string word) {
-         bitset<27> A[2];
+        bitset<27> A[2];
 
         for (auto& ch : word) {
             int i = ch & 31;
