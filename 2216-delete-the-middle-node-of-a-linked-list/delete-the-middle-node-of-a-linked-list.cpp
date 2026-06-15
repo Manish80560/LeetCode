@@ -12,22 +12,34 @@ class Solution {
 public:
     ListNode* deleteMiddle(ListNode* head) {
 
-        if(!head|| !head -> next){
-            return nullptr;
-        }
+        // if(!head|| !head -> next){
+        //     return nullptr;
+        // }
 
-        vector<ListNode*> res;
-        ListNode* temp = head;
+        // vector<ListNode*> res;
+        // ListNode* temp = head;
 
-        while(temp != nullptr){
-            res.push_back(temp);
-            temp = temp->next;
-        }
+        // while(temp != nullptr){
+        //     res.push_back(temp);
+        //     temp = temp->next;
+        // }
 
-        int mid = res.size() / 2;
-        res[mid - 1] -> next = res[mid] -> next;
-        delete res[mid];
-        return head;
+        // int mid = res.size() / 2;
+        // res[mid - 1] -> next = res[mid] -> next;
+        // delete res[mid];
+        // return head;
         
+
+        ListNode* fast = head, *slow = head;
+
+        if (fast->next == NULL) return NULL;
+        fast = fast->next->next;
+        while (fast != NULL && fast->next != NULL) {
+            fast = fast->next->next;
+            slow = slow->next;
+        }
+
+        slow->next = slow->next->next;
+        return head;
     }
 };
