@@ -1,14 +1,14 @@
 class Solution {
 public:
     bool isPowerOfThree(int n) {
-        if(n <= 0){
-          return false;
+        // for base case
+        if(n == 1){
+            return true;
+        }else if(n % 3 != 0 || n <= 0){
+            return false;
+        }else{
+            // for function call till base case
+            return isPowerOfThree(n/3);
         }
-
-        int mul = 1;
-         while (n % 3 == 0) {
-            n /= 3;
-        }
-        return n == 1;   // returns ture if last num remains 1 else return false
     }
 };
