@@ -11,7 +11,7 @@ public:
         }
 
         int res = sum + product;
-        if (res == 0) return false; 
+        // if (res == 0) return false; 
         return n % res == 0;
     }
 };
