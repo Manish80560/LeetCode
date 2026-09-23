@@ -1,17 +1,17 @@
 class Solution {
 public:
-    double myPow(double x, int n) {
+    double myPow(double x, long long n) {
         // using built-in method
         // return pow(x, n);
 
-        long long exp = n;
+        
 
-        if (exp < 0) {
+        if (n < 0) {
             x = 1.0 / x;
-            exp = -exp;
+            n = -n;
         }
 
-        return power(x, exp);
+        return power(x, n);
     }
 
     double power(double x, long long n) {
