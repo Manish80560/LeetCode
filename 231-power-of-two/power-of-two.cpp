@@ -8,5 +8,6 @@ public:
        }else{
         return isPowerOfTwo(n/2);
        }
+
     }
 };
