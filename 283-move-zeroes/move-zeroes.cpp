@@ -19,14 +19,15 @@ public:
     
         for(int i = 0; i < n; i++){
             if(nums[i] != 0){
-                nums[pos] = nums[i];
+                // nums[pos] = nums[i];
+                swap(nums[pos], nums[i]);
                 pos++;
             }
         }
 
-        while(pos < n){
-            nums[pos] = 0;
-            pos++;
-        }
+        // while(pos < n){
+        //     nums[pos] = 0;
+        //     pos++;
+        // }
     }
 };
