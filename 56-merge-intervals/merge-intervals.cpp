@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
-        // Edge case: if there's only one or zero intervals, no merging is needed
+       
         if (intervals.size() <= 1) {
             return intervals;
         }
